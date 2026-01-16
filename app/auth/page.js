@@ -5,22 +5,28 @@ import { useRouter } from "next/navigation";
 import { apiFetch } from "../../lib/api";
 
 export default function AuthPage() {
-  const [mode, setMode] = useState("login"); // 'login' or 'register'
+  const [mode, setMode] = useState("login");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("household");
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false); // ✅ ADDED
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (loading) return;
+
     setError("");
     setMessage("");
+    setLoading(true); // ✅ START LOADING
 
     try {
-      const endpoint = mode === "register" ? "/api/auth/register" : "/api/auth/login";
+      const endpoint =
+        mode === "register" ? "/api/auth/register" : "/api/auth/login";
+
       const payload = { phone, password };
       if (mode === "register") payload.role = role;
       if (mode === "register" && role !== "collector") payload.name = name;
@@ -32,6 +38,8 @@ export default function AuthPage() {
       router.push("/dashboard");
     } catch (err) {
       setError(err.message || "Something went wrong");
+    } finally {
+      setLoading(false); // ✅ STOP LOADING
     }
   };
 
@@ -43,7 +51,9 @@ export default function AuthPage() {
         </h2>
 
         {error && <p style={{ color: "red", textAlign: "center" }}>{error}</p>}
-        {message && <p style={{ color: "green", textAlign: "center" }}>{message}</p>}
+        {message && (
+          <p style={{ color: "green", textAlign: "center" }}>{message}</p>
+        )}
 
         <form onSubmit={handleSubmit}>
           {mode === "register" && (
@@ -94,13 +104,32 @@ export default function AuthPage() {
             style={inputStyle}
           />
 
-          <button type="submit" style={buttonStyle}>
-            {mode === "login" ? "Login" : "Register"}
+          <button
+            type="submit"
+            disabled={loading}
+            style={{
+              ...buttonStyle,
+              opacity: loading ? 0.6 : 1,
+              cursor: loading ? "not-allowed" : "pointer",
+            }}
+          >
+            {loading ? (
+              <span style={spinnerWrap}>
+                <span className="spinner" />
+                Processing…
+              </span>
+            ) : mode === "login" ? (
+              "Login"
+            ) : (
+              "Register"
+            )}
           </button>
         </form>
 
         <p style={{ textAlign: "center", marginTop: "12px", fontSize: "14px" }}>
-          {mode === "login" ? "Don't have an account?" : "Already have an account?"}{" "}
+          {mode === "login"
+            ? "Don't have an account?"
+            : "Already have an account?"}{" "}
           <button
             onClick={() => {
               setMode(mode === "login" ? "register" : "login");
@@ -112,12 +141,31 @@ export default function AuthPage() {
             {mode === "login" ? "Register" : "Login"}
           </button>
         </p>
+
+        {/* ✅ Spinner styles */}
+        <style jsx>{`
+          .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ffffff;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+          }
+
+          @keyframes spin {
+            to {
+              transform: rotate(360deg);
+            }
+          }
+        `}</style>
       </div>
     </div>
   );
 }
 
 /* ================= STYLES ================= */
+
 const containerStyle = {
   display: "flex",
   justifyContent: "center",
@@ -151,7 +199,6 @@ const buttonStyle = {
   background: "#16a34a",
   color: "#fff",
   fontWeight: "bold",
-  cursor: "pointer",
   fontSize: "16px",
 };
 
@@ -161,4 +208,11 @@ const toggleButton = {
   color: "#16a34a",
   cursor: "pointer",
   fontWeight: 600,
+};
+
+const spinnerWrap = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "8px",
 };
