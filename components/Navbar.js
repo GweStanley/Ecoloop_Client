@@ -2,16 +2,22 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
   const router = useRouter();
+  const pathname = usePathname(); // 👈 key fix
 
-  // Check auth token
+  // Re-read token on every route change
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const token = localStorage.getItem("token");
-    if (!token) return;
+    if (!token) {
+      setUser(null);
+      return;
+    }
 
     try {
       const payload = JSON.parse(atob(token.split(".")[1]));
@@ -23,7 +29,7 @@ export default function Navbar() {
     } catch {
       setUser(null);
     }
-  }, []);
+  }, [pathname]); // 👈 THIS fixes refresh issue
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -43,7 +49,7 @@ export default function Navbar() {
             How it Works
           </Link>
 
-          {user && (
+          {user ? (
             <>
               <Link href="/dashboard" style={linkStyle}>
                 Dashboard
@@ -61,18 +67,16 @@ export default function Navbar() {
                 </Link>
               )}
 
-              <div style={pointsStyle}>
+              <div style={pointsStyle} title="EcoPoints earned">
                 🌱 {user.points} pts
                 <span style={roleBadge}>{user.role}</span>
               </div>
 
               <button onClick={logout} style={userButtonStyle}>
-                {user.phone} | Logout
+                {user.phone} · Logout
               </button>
             </>
-          )}
-
-          {!user && (
+          ) : (
             <Link href="/auth" style={ctaStyle}>
               Get Started
             </Link>
@@ -84,6 +88,7 @@ export default function Navbar() {
 }
 
 /* ================= STYLES ================= */
+
 const navStyle = {
   position: "fixed",
   top: 0,
@@ -100,7 +105,7 @@ const navContainer = {
   justifyContent: "space-between",
   alignItems: "center",
   padding: "14px 20px",
-  flexWrap: "wrap", // allows wrapping on small screens
+  flexWrap: "wrap",
 };
 
 const logoStyle = {
@@ -113,8 +118,8 @@ const logoStyle = {
 const menuStyle = {
   display: "flex",
   alignItems: "center",
-  gap: "16px",
-  flexWrap: "wrap", // allows links to stack on small screens
+  gap: "14px",
+  flexWrap: "wrap",
 };
 
 const linkStyle = {
@@ -127,8 +132,8 @@ const linkStyle = {
 const ctaStyle = {
   background: "#16a34a",
   color: "#fff",
-  padding: "8px 14px",
-  borderRadius: "8px",
+  padding: "8px 16px",
+  borderRadius: "10px",
   textDecoration: "none",
   fontWeight: 600,
 };
@@ -158,7 +163,8 @@ const userButtonStyle = {
   background: "#16a34a",
   color: "#fff",
   border: "none",
-  padding: "6px 12px",
-  borderRadius: "8px",
+  padding: "6px 14px",
+  borderRadius: "10px",
   cursor: "pointer",
+  fontWeight: 500,
 };
