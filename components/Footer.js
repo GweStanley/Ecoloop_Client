@@ -10,7 +10,7 @@ export default function Footer() {
           <a href="https://www.linkedin.com/in/gwe-stanley-92ab03253/" target="_blank" rel="noreferrer" style={linkStyle}>
             LinkedIn
           </a>
-          <a href="https://www.wwf.nl/dieren/pandahttps://www.worldwildlife.org/support/advocacy/panda-ambassadors/" target="_blank" rel="noreferrer" style={linkStyle}>
+          <a href="https://www.worldwildlife.org/" target="_blank" rel="noreferrer" style={linkStyle}>
             WWF
           </a>
         </div>
