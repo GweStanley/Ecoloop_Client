@@ -4,14 +4,14 @@ export default function Footer() {
       <div style={containerStyle}>
         <p>© {new Date().getFullYear()} EcoLoop. All rights reserved.</p>
         <div style={socialLinks}>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer" style={linkStyle}>
-            Twitter
+          <a href="https://mtn.cm/" target="_blank" rel="noreferrer" style={linkStyle}>
+            MTN
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" style={linkStyle}>
+          <a href="https://www.linkedin.com/in/gwe-stanley-92ab03253/" target="_blank" rel="noreferrer" style={linkStyle}>
             LinkedIn
           </a>
-          <a href="https://github.com" target="_blank" rel="noreferrer" style={linkStyle}>
-            GitHub
+          <a href="https://www.wwf.nl/dieren/pandahttps://www.worldwildlife.org/support/advocacy/panda-ambassadors/" target="_blank" rel="noreferrer" style={linkStyle}>
+            WWF
           </a>
         </div>
       </div>
