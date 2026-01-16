@@ -1,0 +1,113 @@
+[00:00:01.903] Server  LOG     ✓ Ready in 1359ms
+[00:00:09.756] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:56.299] Server  ERROR   ⨯ ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+
+
+[00:07:56.492] Browser ERROR   ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+[00:07:57.521] Browser ERROR   ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+[00:07:58.336] Browser ERROR   ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+[00:07:58.377] Server  ERROR   ⨯ ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+
+
+[00:07:58.686] Browser ERROR   uncaughtError: Error: ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+
+
+[00:07:58.834] Browser ERROR   ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+[00:07:58.834] Browser ERROR   ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+[00:08:04.715] Browser ERROR   uncaughtError: Error: ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+
+
+[00:08:04.879] Browser ERROR   ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+[00:08:04.880] Browser ERROR   ./Desktop/NEXT.JS/EcoLoop/client/app/dashboard/page.js:136:20
+Parsing ecmascript source code failed
+  134 |             />
+  135 |
+> 136 |             <button
+      |                    ^
+  137 |
+
+Expected '</', got '<eof>'
+[00:08:43.940] Server  LOG     ✓ Compiled in 64ms
+[00:08:44.181] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:38:02.327] Server  LOG     ✓ Compiled in 140ms
+[01:38:12.330] Server  LOG     ✓ Compiled in 106ms

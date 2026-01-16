@@ -1,0 +1,227 @@
+/* [project]/Desktop/NEXT.JS/EcoLoop/client/app/globals.css [app-client] (css) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  color: #333;
+  background-color: #f0f2f5;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input, select {
+  font-family: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #1a1a1a;
+  background: #f7f9fb;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home {
+  width: 100%;
+}
+
+.hero {
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #0f766e, #10b981);
+  padding: 5rem 1.5rem;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.tagline {
+  opacity: .95;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+.cta {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.btn {
+  border-radius: 8px;
+  padding: .75rem 1.5rem;
+  font-weight: 600;
+  transition: transform .15s, opacity .15s;
+}
+
+.btn:hover {
+  opacity: .95;
+  transform: translateY(-2px);
+}
+
+.primary {
+  color: #0f766e;
+  background: #fff;
+}
+
+.secondary {
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.large {
+  font-size: 1.1rem;
+}
+
+.how {
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.steps {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  display: grid;
+}
+
+.step {
+  background: #fff;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px #0000000d;
+}
+
+.value {
+  text-align: center;
+  background: #fff;
+  padding: 4rem 1.5rem;
+}
+
+.value ul {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.value li {
+  padding: .75rem 0;
+  font-size: 1.05rem;
+}
+
+.final {
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #0f3d2e, #145c43);
+  padding: 4rem 1.5rem;
+}
+
+.final h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.final .btn {
+  display: inline-block;
+}
+
+.story {
+  background: #f7faf9;
+  padding: 4rem 1.5rem;
+}
+
+.story h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.story-intro {
+  text-align: center;
+  color: #4b5563;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  font-size: 1.05rem;
+}
+
+.story-flow {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+}
+
+.story-step {
+  background: #fff;
+  border-radius: 14px;
+  padding: 2rem 1.75rem;
+  transition: transform .25s, box-shadow .25s;
+  position: relative;
+  box-shadow: 0 10px 25px #0000000f;
+}
+
+.story-step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px #00000014;
+}
+
+.story-step span {
+  color: #fff;
+  background: #16a34a;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  font-size: .95rem;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  top: -14px;
+  left: 20px;
+}
+
+.story-step h3 {
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
+  font-size: 1.2rem;
+}
+
+.story-step p {
+  color: #374151;
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+/*# sourceMappingURL=Desktop_NEXT_JS_EcoLoop_client_app_globals_869f7f87.css.map*/

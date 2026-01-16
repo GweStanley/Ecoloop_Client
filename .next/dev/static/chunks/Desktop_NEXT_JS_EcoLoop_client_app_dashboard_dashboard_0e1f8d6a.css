@@ -1,0 +1,82 @@
+/* [project]/Desktop/NEXT.JS/EcoLoop/client/app/dashboard/dashboard.css [app-client] (css) */
+.dashboard {
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px;
+}
+
+.dashboard-header h1 {
+  margin-bottom: 4px;
+  font-size: 28px;
+}
+
+.sub {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.actions {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+  display: grid;
+}
+
+.card {
+  color: #000;
+  background: #f5f7f8;
+  border-radius: 14px;
+  padding: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .2s;
+}
+
+.card:hover {
+  background: #eef2f3;
+  transform: translateY(-3px);
+}
+
+.primary {
+  color: #fff;
+  background: #0f766e;
+}
+
+.primary:hover {
+  background: #115e59;
+}
+
+.overview {
+  gap: 20px;
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.stat {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  flex: 1;
+  padding: 18px;
+}
+
+.stat span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.empty {
+  text-align: center;
+  background: #fafafa;
+  border-radius: 12px;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.loader, .error {
+  text-align: center;
+  padding: 60px;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=Desktop_NEXT_JS_EcoLoop_client_app_dashboard_dashboard_0e1f8d6a.css.map*/
